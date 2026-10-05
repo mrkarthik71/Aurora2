@@ -1,0 +1,3 @@
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity=1;io.unobserve(x.target)}}),{threshold:.08});
+document.querySelectorAll('.blk').forEach(el=>{el.style.opacity=0;el.style.transition='opacity .5s ease';io.observe(el)});
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));t.classList.add('active')}));
